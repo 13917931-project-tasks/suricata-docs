@@ -88,7 +88,7 @@ local:
 
 ### Uso de regras _Emerging Threats_
 
-_Emerging Threats_ (ET) é um projeto Open Source que fornece uma grande variedade de regras de detecção de ataques cibernéticos, as quais são atualizadas constantemente.O Suricata possui um conjunto de regras instaladas por padrão, mas é interessante instalar as regras _ET_ para promover uma melhor detecção de ataques.
+_Emerging Threats_ (ET) é um projeto Open Source que fornece uma grande variedade de regras de detecção de ataques cibernéticos, as quais são atualizadas constantemente.O Suricata possui um conjunto de regras instaladas por padrão, mas é interessante instalar as regras ET para promover uma melhor detecção de ataques.
 
 Tendo isso em vista, baixe o conjunto de regras ET seguindo as instruções [desse link](https://rules.emergingthreats.net/OPEN_download_instructions.html). Depois, mova o arquivo das regras para o diretório anterior ao qual as regras estão instaladas. Ou seja, se as regras foram instaladas em */usr/share/suricata/rules*, mova o arquivo para */usr/share/suricata*. Isso deve ser feito para que as regras ET fiquem no diretório padrão de regras. Em seguida, promova a extração do arquivo, executando o seguinte comando:
 
