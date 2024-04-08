@@ -1,10 +1,14 @@
 # Documentação Suricata
 
+
+
   Este repositório contém informações sobre o processo de desinstalação, instalação e configuração da ferramenta de IDS Suricata. Para obter mais informações sobre Suricata, é recomendado acessar a documentação oficial, disponível [aqui](https://docs.suricata.io/). 
   
 **⚠️ OBS**: As informações são relacionadas à utilização do Suricata no sistema operacional Ubuntu versão 22.04. Alguns comandos podem precisar de alterações a depender do sistema operacional utilizado.
 
 ## Desinstalação
+
+
 
   Para desintalar o Suricata, execute o seguinte o comando:
 
@@ -19,6 +23,8 @@ sudo find / -type f -name "*suricata*" -exec rm -f {} \;
 ```
 
 ## Instalação
+
+
 
   Para instalar Suricata, execute os seguintes comandos:
 
@@ -40,6 +46,8 @@ suricata -V
 
 ### Suricata Update
 
+
+
 Suricata Update é uma ferramenta utilizada para gerenciar as regras instaladas, podendo ser usada para atualizar as regras, bem como também é usada para ativar, desativar, configurar e alterar regras a partir de arquivos específicos. Nesse sentido, é uma ferramenta essencial a ser instalada para melhor aproveitamento dos recursos do Suricata.
 
 Verifique se Suricata Update está instalado:
@@ -55,6 +63,8 @@ sudo pip install --upgrade suricata-update
 ```
 
 ### Verificação de diretório dos arquivos instalados
+
+
 
   Um dos primeiros passos da configuração é verificar se os principais arquivos foram instalados no diretório padrão. Alguns exemplos de arquivos a serem verificados são:
 
@@ -88,6 +98,8 @@ local:
 
 ### Uso de regras _Emerging Threats_
 
+
+
 _Emerging Threats_ (ET) é um projeto Open Source que fornece uma grande variedade de regras de detecção de ataques cibernéticos, as quais são atualizadas constantemente.O Suricata possui um conjunto de regras instaladas por padrão, mas é interessante instalar as regras ET para promover uma melhor detecção de ataques.
 
 Tendo isso em vista, baixe o conjunto de regras ET seguindo as instruções [desse link](https://rules.emergingthreats.net/OPEN_download_instructions.html). Depois, mova o arquivo das regras para o diretório anterior ao qual as regras estão instaladas. Ou seja, se as regras foram instaladas em */usr/share/suricata/rules*, mova o arquivo para */usr/share/suricata*. Isso deve ser feito para que as regras ET fiquem no diretório padrão de regras. Em seguida, promova a extração do arquivo, executando o seguinte comando:
@@ -97,6 +109,8 @@ sudo tar -xvzf emerging.rules.tar.gz
 ```
 
 ### Configuração de monitoramento de rede
+
+
 
 Para configurar os ips que serão monitorados, é preciso abrir o arquivo _suricata.yaml_ que, por padrão, está presente no diretório */etc/suricata*, e escrever o ip monitorado nesse trecho: 
 
