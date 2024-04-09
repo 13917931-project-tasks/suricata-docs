@@ -2,7 +2,7 @@
 
 
 
-  Este repositório contém informações sobre o processo de desinstalação, instalação e configuração da ferramenta de IDS Suricata. Para obter mais informações sobre Suricata, é recomendado acessar a documentação oficial, disponível [aqui](https://docs.suricata.io/). 
+  Este repositório contém informações sobre o processo de desinstalação, instalação e configuração da ferramenta de IDS Suricata. Para obter mais informações sobre Suricata, é recomendado acessar a [documentação oficial](https://docs.suricata.io/). Em caso de dúvidas, é válido consultar o [fórum](https://forum.suricata.io/) oficial do Suricata, onde diversos problemas são discutidos.
   
 **⚠️ OBS**: As informações são relacionadas à utilização do Suricata no sistema operacional Ubuntu versão 22.04. Alguns comandos podem precisar de alterações a depender do sistema operacional utilizado.
 
@@ -140,6 +140,7 @@ Onde *eth0* deve ser substituído pela interface a ser monitorada.
 Nesse sentido, o Suricata funcionará a partir de uma máquina na qual será monitorada a interface especificada, de modo que o tráfego entre o ip dessa máquina e os ip's especificados em *HOME_NET* pode gerar alertas. Portanto, se voce estiver utilizando uma única máquina para realizar ataques, é recomendado que o ip dela não faça parte do *HOME_NET*, a fim de obter melhores resultados. 
 
 Em sistemas linux possível criar unidades de rede virtuais, a partir das quais podemos realizar experimentos básicos de tráfego, essas unidades se chamam *Network Namespaces*. Essa funcionalidade pode ser útil para criação de ips diversos em única máquina, podendo promover uma melhor utilização do Suricata. [Mais informações](https://www.youtube.com/watch?v=j_UUnlVC2Ss).
+
 
 
 
