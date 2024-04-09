@@ -53,6 +53,9 @@ Vertical:
 Horizontal:
 
 - alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET SCAN NMAP -sS window 1024"; fragbits:!D; dsize:0; flags:S,12; ack:0; window:1024; threshold: type both, track by_dst, count 1, seconds 60; classtype:attempted-recon; sid:2009582; rev:3; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
+- alert tcp any any -> any ![21,22,23,25,80,88,110,135,137,138,139,161,389,443,445,465,514,587,636,995,1025,1026,1027,1028,1029,1433,1720,3306,3389,5900,8443,11211,27017] (msg:"POSSBL SCAN NMAP TCP (type -sS)"; flow:to_server,stateless; flags:S; window:1024; tcp.mss:1460; threshold:type threshold, track by_src, count 7, seconds 180; classtype:attempted-recon; sid:1000007; priority:2; rev:2;)
+- alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg: "Possible nmap -sS horizontal scan";flow: to_server, stateless, no_stream; flags:S; window:1024;tcp.mss:1460; dsize:0; threshold: type both, track by_src, count 5, seconds 20; classtype:attempted-recon;sid:10000021; priority:1; rev:1;)
+
 
 ***nmap -sU***
 
@@ -65,4 +68,10 @@ Vertical:
 Horizontal:
 
 - alert udp any any -> any any (msg: "Possible nmap -sU horizontal scan"; flow:to_server, stateless; dsize:0; threshold: type limit, track by_src, count 15, seconds 20; classtype:attempted-recon; sid:10000124; priority:1; rev:1;
+
+***nmap -sA***
+
+***nmap -sO***
+
+***nmap -sX***
 
