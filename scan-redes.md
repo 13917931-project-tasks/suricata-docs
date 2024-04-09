@@ -15,7 +15,7 @@ Os ataques de scan de redes que foram analisados foram:
 - *nmap -sT*: Procura a estabelcer diversas conexões TCP;
 - *nmap -sU*: Envio de diversos pacotes UDP;
 
-Os três ataques citados acima têm em comum o objetivo de verificar quais das portas analisadas estão abertas.
+    - Os três ataques citados acima têm em comum o objetivo de verificar quais das portas analisadas estão abertas.
 
 - *nmap -sA*: Procura obter informações diversas sobre a máquina analisada, como sistema operacional e versões de sistemas instalados;
 - *nmap -sO*: Procura saber qual o sistema operacional da máquina que hospeda o ip analisado;
