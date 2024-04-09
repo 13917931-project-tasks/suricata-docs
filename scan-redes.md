@@ -67,11 +67,23 @@ Vertical:
 
 Horizontal:
 
-- alert udp any any -> any any (msg: "Possible nmap -sU horizontal scan"; flow:to_server, stateless; dsize:0; threshold: type limit, track by_src, count 15, seconds 20; classtype:attempted-recon; sid:10000124; priority:1; rev:1;
+- alert udp any any -> any any (msg: "Possible nmap -sU horizontal scan"; flow:to_server, stateless; dsize:0; threshold: type limit, track by_src, count 15, seconds 5; classtype:attempted-recon; sid:10000124; priority:1; rev:1;
 
 ***nmap -sA***
 
+- alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET SCAN NMAP -sA (1)"; fragbits:!D; dsize:0; flags:A,12; window:1024; threshold: type both, track by_dst, count 1, seconds 60; classtype:attempted-recon; sid:2000538; rev:8; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
+- alert tcp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL TCP"; classtype:trojan-activity; sid:1000013; priority:1; rev:1;)
+- alert tcp any any -> any 4444 (msg:"POSSBL SCAN M-SPLOIT B.SHELL TCP"; classtype:trojan-activity; sid:1000015; priority:1; rev:2;)
+
 ***nmap -sO***
 
+- alert ip $EXTERNAL_NET any -> $HOME_NET any (msg:"ET SCAN NMAP -sO"; dsize:0; ip_proto:21; threshold: type both, track by_dst, count 1, seconds 60; classtype:attempted-recon; sid:2000536; rev:7; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
+- alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET SCAN NMAP -sA (1)"; fragbits:!D; dsize:0; flags:A,12; window:1024; threshold: type both, track by_dst, count 1, seconds 60; classtype:attempted-recon; sid:2000538; rev:8;)
+- alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg:"GPL SCAN PING NMAP"; dsize:0; itype:8; reference:arachnids,162; classtype:attempted-recon; sid:2100469; rev:4; metadata:created_at 2010_09_23, updated_at 2019_07_26;)
+
 ***nmap -sX***
+
+- alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"GPL SCAN nmap XMAS"; flow:stateless; flags:FPU,12; reference:arachnids,30; classtype:attempted-recon; sid:2101228; rev:8; metadata:created_at 2010_09_23, updated_at 2019_07_26;)
+  - Esssa regra, padrão do Suricata ou *Emerging Threats*, acaba gerando muitos alertas, por não ter definições de *thresholding*.
+
 
