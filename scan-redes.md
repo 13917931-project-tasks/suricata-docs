@@ -23,4 +23,9 @@ Os ataques de scan de redes que foram analisados foram:
 
 ## Análise
 
+Para detectar os scans de redes, foi ativado o conjunto de regras *emeging-scan.rules*, pertencente às regras *Emerging Threats*. Além disso, foram usadas regras presentes nos dois seguintes repositórios: 
 
+1. [Regras criadas por Aleksi Bovellan](https://github.com/aleksibovellan/opnsense-suricata-nmaps/blob/main/local.rules);
+2. [Regras de autoria própria](https://github.com/mayara-santos01/local.rules/blob/main/local.rules).
+
+### *nmap -sT*
