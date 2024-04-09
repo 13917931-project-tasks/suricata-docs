@@ -30,7 +30,7 @@ Para detectar os scans de redes, foi ativado o conjunto de regras *emeging-scan.
 
 Nos seguintes tópicos, vão ser abordadas quais regras geraram alertas para cada tipo de ataque.
 
-#### *nmap -sT*
+***nmap -sT***
 
 Vertical:
 
@@ -41,7 +41,7 @@ Horizontal:
 
 - alert tcp $EXTERNAL_NET ![80,443] -> $HOME_NET ![80,443] (msg: "Possible nmap -sT horizontal scan"; flow: to_server, stateless, no_stream; flags:S; window:64240; tcp.mss: 1460; dsize:0; threshold: type both, track by_src, count 1, seconds 20; classtype:attempted-recon; sid:10000020; rev:1;)
 
-#### *nmap -sS*
+***nmap -sS***
 
 Vertical:
 
@@ -54,7 +54,7 @@ Horizontal:
 
 - alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"ET SCAN NMAP -sS window 1024"; fragbits:!D; dsize:0; flags:S,12; ack:0; window:1024; threshold: type both, track by_dst, count 1, seconds 60; classtype:attempted-recon; sid:2009582; rev:3; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
 
-#### *nmap -sU*
+***nmap -sU***
 
 Vertical:
 
