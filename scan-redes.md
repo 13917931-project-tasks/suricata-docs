@@ -86,4 +86,8 @@ Horizontal:
 - alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"GPL SCAN nmap XMAS"; flow:stateless; flags:FPU,12; reference:arachnids,30; classtype:attempted-recon; sid:2101228; rev:8; metadata:created_at 2010_09_23, updated_at 2019_07_26;)
   - Esssa regra, padrão do Suricata ou *Emerging Threats*, acaba gerando muitos alertas, por não ter definições de *thresholding*.
 
+#### Referências:
+
+1. [NMAP Official Site - Port Scanning techniques](https://nmap.org/book/man-port-scanning-techniques.html)
+2. [NMAP Official Site - Timing Templates (-T)](https://nmap.org/book/performance-timing-templates.html)
 
