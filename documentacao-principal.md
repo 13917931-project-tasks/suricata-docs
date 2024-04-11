@@ -141,6 +141,11 @@ Nesse sentido, o Suricata funcionará a partir de uma máquina na qual será mon
 
 Em sistemas linux possível criar unidades de rede virtuais, a partir das quais podemos realizar experimentos básicos de tráfego, essas unidades se chamam *Network Namespaces*. Essa funcionalidade pode ser útil para criação de ips diversos em única máquina, podendo promover uma melhor utilização do Suricata. [Mais informações](https://www.youtube.com/watch?v=j_UUnlVC2Ss).
 
+#### Referências
+
+[^1]: https://docs.suricata.io/en/suricata-7.0.4/quickstart.html#installation
+[^2]: https://github.com/OISF/suricata-update#suricata-update
+[^3]: https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/suricata?type=uninstall 
 
 
 
