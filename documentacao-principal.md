@@ -6,22 +6,6 @@
   
 **⚠️ OBS**: As informações são relacionadas à utilização do Suricata no sistema operacional Ubuntu versão 22.04. Alguns comandos podem precisar de alterações a depender do sistema operacional utilizado.
 
-## Desinstalação
-
-
-
-  Para desintalar o Suricata, execute o seguinte o comando:
-
-```
-sudo apt remove suricata 
-```
-
-  Além disso, pode-se também apagar todas os arquivos relacionados ao Suricata para evitar conflitos no processo de instalação:
-
-```
-sudo find / -type f -name "*suricata*" -exec rm -f {} \;
-```
-
 ## Instalação
 
 
@@ -141,11 +125,63 @@ Nesse sentido, o Suricata funcionará a partir de uma máquina na qual será mon
 
 Em sistemas linux possível criar unidades de rede virtuais, a partir das quais podemos realizar experimentos básicos de tráfego, essas unidades se chamam *Network Namespaces*. Essa funcionalidade pode ser útil para criação de ips diversos em única máquina, podendo promover uma melhor utilização do Suricata. [Mais informações](https://www.youtube.com/watch?v=j_UUnlVC2Ss).
 
+## Teste
+
+Verificar se o Suricata está ativo:
+
+`
+sudo systemctl status suricata
+`
+
+Se não estiver, ative executando:
+
+`
+sudo systemctl start suricata
+`
+
+Abra o arquivo no qual ficam registrados os alertas Suricata:
+
+`
+sudo tail -f /var/log/suricata/fast.log
+`
+
+Execute o comando, que realiza uma requisição HTTP:
+
+`
+curl http://testmynids.org/uid/index.html
+`
+
+Que deve retornar a seguinte resposta:
+
+`
+Output
+uid=0(root) gid=0(root) groups=0(root)
+`
+
+Além disso, deve-se gerar um alerta que ficará registrado em fast.log
+
+## Desinstalação
+
+
+
+  Para desintalar o Suricata, execute o seguinte o comando:
+
+```
+sudo apt remove suricata 
+```
+
+  Além disso, pode-se também apagar todas os arquivos relacionados ao Suricata para evitar conflitos no processo de instalação:
+
+```
+sudo find / -type f -name "*suricata*" -exec rm -f {} \;
+```
+
 #### Referências
 
-[^1]: https://docs.suricata.io/en/suricata-7.0.4/quickstart.html#installation
-[^2]: https://github.com/OISF/suricata-update#suricata-update
-[^3]: https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/suricata?type=uninstall 
+[Suricata Install Guide - Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-suricata-on-ubuntu-20-04)
+[Suricata Official documentation - Quickstart guide](https://docs.suricata.io/en/suricata-7.0.4/quickstart.html#installation)
+[OISF - suricata-update](https://github.com/OISF/suricata-update#suricata-update)
+[Suricata uninstallation](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/suricata?type=uninstall)
 
 
 
