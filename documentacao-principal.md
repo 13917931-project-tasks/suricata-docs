@@ -129,34 +129,34 @@ Em sistemas linux possível criar unidades de rede virtuais, a partir das quais 
 
 Verificar se o Suricata está ativo:
 
-`
+```
 sudo systemctl status suricata
-`
+```
 
 Se não estiver, ative executando:
 
-`
+```
 sudo systemctl start suricata
-`
+```
 
 Abra o arquivo no qual ficam registrados os alertas Suricata:
 
-`
+```
 sudo tail -f /var/log/suricata/fast.log
-`
+```
 
 Execute o comando, que realiza uma requisição HTTP:
 
-`
+```
 curl http://testmynids.org/uid/index.html
-`
+```
 
 Que deve retornar a seguinte resposta:
 
-`
+```
 Output
 uid=0(root) gid=0(root) groups=0(root)
-`
+```
 
 Além disso, deve-se gerar um alerta que ficará registrado em fast.log
 
