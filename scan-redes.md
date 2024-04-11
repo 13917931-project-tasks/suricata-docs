@@ -21,6 +21,20 @@ Os ataques de scan de redes que foram analisados foram:
 - *nmap -sO*: Procura saber qual o sistema operacional da máquina que hospeda o ip analisado;
 - *nmap -sX*: Procura saber quais portas estão abertas, enviando pacotes com flags PSH,FIN e URG, de modo a obter respostas específicas do alvo.
 
+### Comandos de timing (-T) Nmap:
+
+Os comandos de timing podem ser usados para promover ataques a partir do envio de pacotes TCP controlando a temportização do envio de pacotes. Ou seja, pode-se determinar se mais ou menos pacotes vão ser enviados. Quanto menor a quantidade de pacotes enviados, mais lento é o ataque, porém, as chances de detecção são menores. Os comandos de timing são:
+
+- *nmap -T0*
+- *nmap -T1*
+- *nmap -T2*
+- *nmap -T3*
+- *nmap -T4*
+- *nmap -T5*
+
+Os ataques -T0 e -T1 são os mais lentos e menos detectáveis. O ataque -T2 envolve envio de pacotes com maior frequência e pode ser detectado por ferramentas como Suricata. Os ataques -T3, -T4 e -T5, tem um aumento gradual na frequência de envio de pacotes, ou seja, o -T5 é o ataque mais agressivo.
+
+
 ## Análise
 
 Para detectar os scans de redes, foi ativado o conjunto de regras *emeging-scan.rules*, pertencente às regras *Emerging Threats*. Além disso, foram usadas regras presentes nos dois seguintes repositórios: 
