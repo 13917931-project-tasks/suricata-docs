@@ -178,10 +178,10 @@ sudo find / -type f -name "*suricata*" -exec rm -f {} \;
 
 #### Referências
 
-[Suricata Install Guide - Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-suricata-on-ubuntu-20-04)
-[Suricata Official documentation - Quickstart guide](https://docs.suricata.io/en/suricata-7.0.4/quickstart.html#installation)
-[OISF - suricata-update](https://github.com/OISF/suricata-update#suricata-update)
-[Suricata uninstallation](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/suricata?type=uninstall)
+1. [Suricata Install Guide - Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-suricata-on-ubuntu-20-04)
+2. [Suricata Official documentation - Quickstart guide](https://docs.suricata.io/en/suricata-7.0.4/quickstart.html#installation)
+3. [OISF - suricata-update](https://github.com/OISF/suricata-update#suricata-update)
+4. [Suricata uninstallation](https://www.thelinuxfaq.com/ubuntu/ubuntu-17-04-zesty-zapus/suricata?type=uninstall)
 
 
 
