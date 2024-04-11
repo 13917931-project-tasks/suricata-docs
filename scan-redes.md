@@ -4,10 +4,18 @@ Uma vez que o Suricata esteja instalado e configurado, pode-se fazer detecções
 
 ## Conceitos
 
-Existem dois tipos de scan de rede:
+### Definição de scan de redes
+
+Scans de redes são ataques feito de maneira maliciosa para obter informações sensíveis da rede, como IP's ativos em uma subrede, portas ativas em um único IP, e até mesmo é possível obter informações sobre o sistema operacional da máquina que hospeda um determinado IP e sobre softwares ativos nela. A partir dessas informações, é possível determinar alvos e saber quais serviços desses alvos estão ativos e, portanto, podem ser atacados de maneira mais séria. Ou seja, à princípio, o scan de redes não é considerado um ataque extremamente prejudicial, mas os dados obtidos podem ser usados para realização de ataques mais perigosos.
+
+Nesse sentido, existem dois tipos de scan de rede:
 
 1. Scan Horizontal: Scan de um conjunto uma porta em vários ip's;
 2. Scan Vertical: Scan de várias portas em um único ip.
+
+### Scan de redes com NMAP
+
+NMAP é uma ferramenta Open Source que pode ser utilizada para fazer scan de redes com o intuito de obter informaões detalhadas de uma ou mais redes, sendo que essas informações podem ser utilizadas para autidorias de segurança e melhor entendimento da rede. [Mais informações](https://nmap.org/).
 
 Os ataques de scan de redes que foram analisados foram:
 
@@ -102,6 +110,8 @@ Horizontal:
 
 #### Referências:
 
-1. [NMAP Official Site - Port Scanning techniques](https://nmap.org/book/man-port-scanning-techniques.html)
-2. [NMAP Official Site - Timing Templates (-T)](https://nmap.org/book/performance-timing-templates.html)
+1. [C.Leckie and R. Kotagiri - A Probabilistic Approach to Detecting Network Scans](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=8691da6113e480795f06186e5c6d3fcb7af91992)
+2. [NMAP Official Site - Port Scanning techniques](https://nmap.org/book/man-port-scanning-techniques.html)
+3. [NMAP Official Site - Description](https://nmap.org/book/man.html#man-description)
+4. [NMAP Official Site - Timing Templates (-T)](https://nmap.org/book/performance-timing-templates.html)
 
