@@ -92,6 +92,8 @@ Tendo isso em vista, baixe o conjunto de regras ET seguindo as instruções [des
 sudo tar -xvzf emerging.rules.tar.gz
 ```
 
+Outro conjunto de regras que pode ser baixado no diretório padrão de regras, principlaemnte para detecção de ataques de scan de redes, é o [OPNsense's Suricata IDS/IPS NMAP Detection Rules](https://github.com/aleksibovellan/opnsense-suricata-nmaps), de autoria de Aleksi Bollevan. Deve-se baixar o arquivo *local.rules*.
+
 ### Configuração de monitoramento de rede
 
 
