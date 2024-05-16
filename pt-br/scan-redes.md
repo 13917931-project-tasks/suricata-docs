@@ -27,7 +27,7 @@ Os ataques de scan de redes que foram analisados foram:
 
 - *nmap -sA*: Procura obter informações diversas sobre a máquina analisada, como sistema operacional e versões de sistemas instalados;
 - *nmap -sO*: Procura saber qual o sistema operacional da máquina que hospeda o ip analisado;
-- *nmap -sX*: Procura saber quais portas estão abertas, enviando pacotes com flags PSH,FIN e URG, de modo a obter respostas específicas do alvo.
+- *nmap -sX*: Procura saber quais portas estão abertas, enviando pacotes com flags PSH,FIN e URG, de modo a obter respostas específicas do alvo, como serviços ativos.
 
 ### Comandos de timing (-T) Nmap:
 
