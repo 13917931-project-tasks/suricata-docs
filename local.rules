@@ -33,18 +33,17 @@ alert tcp $EXTERNAL_NET any -> $HOME_NET 110 (msg: "Possible POP3 Brute Force at
 
 #detecter flood avec fragmentation
 #dsize:>=1450
-alert ip $EXTERNAL_NET any -> $HOME_NET any (msg: "Possible packets fragmentation attack"; fragbits:M; threshold: type both, track by_rule, count 5, seconds 15; classtype: credential-theft; sid: 100000139; rev:1;)
+#alert ip $EXTERNAL_NET any -> $HOME_NET any (msg: "Possible packets fragmentation attack"; fragbits:M; threshold: type both, track by_rule, count 5, seconds 15; classtype: attempted-recon; sid: 100000139; rev:1;)
 
-#alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg: "Possible TCP fragmentation attack"; flow: to_server; dsize:>=1450; threshold: type both, track by_src, count 5, seconds 15; classtype: credential-theft; sid: 100000140; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg: "Possible TCP fragmentation attack"; fragoffset:>0; threshold: type both, track by_rule, count 5, seconds 15; classtype: bad-unknown; sid: 100000140; rev:1;)
 
-#dsize:>=1450
-#alert udp $EXTERNAL_NET any -> $HOME_NET any (msg: "Possible UDP fragmentation attack"; flow: to_server; fragbits:M; threshold: type both, track by_src, count 5, seconds 15; classtype: credential-theft; sid: 100000141; rev:1;)
+#fragbits:M
+alert udp $EXTERNAL_NET any -> $HOME_NET any (msg: "Possible UDP fragmentation attack"; fragoffset:>0; threshold: type both, track by_rule, count 5, seconds 15; classtype: bad-unknown; sid: 100000141; rev:1;)
 
 #detecter flood icmp
 alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg: "Possible ICMP Flood"; flow: to_server; threshold: type both, track by_src, count 1000, seconds 10; classtype: credential-theft; sid: 100000149; rev:1;)
 
 alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"CUSTOM ET SCAN Potential SSH Scan"; flow:to_server; flags:S,12; threshold: type both, track by_src, count 5, seconds 20; reference:url,en.wikipedia.org/wiki/Brute_force_attack; classtype:attempted-recon; sid:10000145; rev:20; metadata:created_at 2010_07_30, updated_at 2019_07_26;)
-
 
 
 
